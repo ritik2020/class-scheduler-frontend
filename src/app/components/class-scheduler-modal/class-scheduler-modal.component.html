@@ -1,0 +1,17 @@
+<div id="modal-container">
+</div>
+
+<div id="modal">
+    <input type="text" placeholder="Topic" [(ngModel)]="topic">
+    <input type="text" placeholder="Date (YYYY-MM-DD)" [(ngModel)]="date">
+    <label for="teachers" style="font-size: 12px; padding:5px;">Select Teacher</label>
+    <select name="teachers" id="teachers" style="margin-bottom: 5px;" [(ngModel)]="teacherID">
+        <option value={{teacher.id}} *ngFor="let teacher of teachers">{{teacher.teacher_name}}</option>
+    </select>
+    <p>Timings (24-Hour Format)</p>
+    <input type="text" placeholder="Start Time (HH:MM:SS)" [(ngModel)]="startTime">
+    <input type="text" placeholder="End Time (HH:MM:SS)" [(ngModel)]="endTime">
+    <button (click)="schedule()">Schedule Class</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+

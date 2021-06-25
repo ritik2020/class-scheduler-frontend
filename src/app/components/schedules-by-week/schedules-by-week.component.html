@@ -1,0 +1,7 @@
+<div *ngFor="let schedule of schedules; let i=index">
+    <h5>Week {{i+1}}</h5>
+    <h4>{{schedule.startDate | date: 'dd/MM/yyyy'}}-{{schedule.endDate | date: 'dd/MM/yyyy'}}</h4>
+    <p *ngIf="schedule.schedules.length===0">No Schedules</p>
+    <schedules *ngIf="schedule.schedules.length!=0" [schedules]="schedule.schedules"></schedules>
+    <hr>
+</div>

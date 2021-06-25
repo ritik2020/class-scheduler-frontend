@@ -1,0 +1,13 @@
+<div *ngIf="schedules">
+    <label for="teachers" style="font-size: 12px; padding:5px;">Filter by teacher</label>
+    <select name="teachers" id="teachers" style="margin-bottom: 5px;" (change)="filterByTeacher($event.target.value)">
+        <option value={{teacher.id}} *ngFor="let teacher of teachers">{{teacher.teacher_name}}</option>
+        <option value="-1">Show All</option>
+    </select>
+</div>
+
+<div *ngFor="let schedule of schedules | filterByTeacher:filterTeacherID" class="schedule">
+    <h5>{{schedule.teacher_name}}</h5>
+    <h4>{{schedule.topic_name}} ({{schedule.start_time}} - {{schedule.end_time}})</h4> 
+    <p>{{schedule.schedule_date | date: 'dd/MM/yyyy'}}</p>
+</div>

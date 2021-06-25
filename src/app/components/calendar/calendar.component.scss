@@ -1,0 +1,44 @@
+#header{
+    text-align: center;
+}
+
+#weeks{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#weeks>div{
+    flex-basis: 13.5%;
+    text-align: center;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+}
+
+#days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day{
+    flex-basis: 13.5%;
+    padding: 10px 0;
+    text-align:center;
+    cursor: pointer;
+    border: 1px solid lightgray;
+}
+
+.day:hover{
+    transform: scale(1.1);
+    background-color: lightgray;
+    transition: transform 400ms ease-in-out;
+}
+
+.padding-day{
+    visibility: hidden;
+}
+
+.current-day{
+    background-color: lightgray;
+}

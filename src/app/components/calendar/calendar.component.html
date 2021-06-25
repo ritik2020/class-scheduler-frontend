@@ -1,0 +1,26 @@
+<div id="calendar-container">
+    <h1 id="header">{{calendarService.monthNameByIndex(month)}},{{year}}</h1>
+    <div id="weeks">
+        <div>Su</div>
+        <div>Mo</div>
+        <div>Tu</div>
+        <div>We</div>
+        <div>Th</div>
+        <div>Fr</div>
+        <div>Sa</div>
+    </div>
+    <div id="days">
+        <div *ngFor="let day of numberToIterable(paddingDays+daysInMonth); let i=index" class="day"
+            [ngClass]="{
+                'current-day': (month===todayMonth && year===todayYear && (((i+1)-paddingDays)===todayDate)), 
+                'padding-day': (i+1)<=paddingDays, 
+                'normal-day': (i+1)>paddingDays 
+            }"
+        >
+            <div *ngIf="(i+1)<paddingDays"></div>
+            <div *ngIf="(i+1)>paddingDays" (click)="dateClickHandler((i+1)-paddingDays)">
+                <span>{{(i+1)-paddingDays}}</span>
+            </div>
+        </div>     
+    </div>
+</div>
