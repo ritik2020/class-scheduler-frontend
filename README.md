@@ -1,5 +1,3 @@
-This app is deployed on https://javascriptacademy.tech/pepcoding/
-
 I build this using angular but i haven't used any external libararies that will make my work easy. I have used only html, css for creating components.
 
 Steps to run code on your machine:
